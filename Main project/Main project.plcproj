@@ -45,7 +45,16 @@
     <Compile Include="POUs\Devices\NormallyOpenSensor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Machine\MyConveyorSortingMachine.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Module\I_Module.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Module\SortingConveyor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -53,6 +62,8 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\Devices" />
+    <Folder Include="POUs\Machine" />
+    <Folder Include="POUs\Module" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

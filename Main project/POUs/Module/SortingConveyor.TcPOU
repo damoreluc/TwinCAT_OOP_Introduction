@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="SortingConveyor" Id="{6edeefe8-d3dc-4764-8536-d2ac7fc3a251}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SortingConveyor IMPLEMENTS I_Module
+VAR
+	enabled	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{d21d1bad-9e97-409f-b2b3-4ec6e1e821c6}">
+      <Declaration><![CDATA[METHOD Disable
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[enabled := false;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{f2c18022-b9d6-4908-833c-9365e754e1d7}">
+      <Declaration><![CDATA[METHOD Enable
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[enabled := true;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

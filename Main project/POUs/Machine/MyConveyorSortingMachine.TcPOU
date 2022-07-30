@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="MyConveyorSortingMachine" Id="{c944c421-aad7-4a3f-9631-f831b6fa219e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK MyConveyorSortingMachine
+VAR
+	_StartButton	:	I_PushButton;
+	_StopButton	:	I_PushButton;
+	_EmergencyStopButton	:	I_PushButton;
+	_ConveyorModule	:	I_Module;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF _StopButton.IsPressed OR _EmergencyStopButton.IsPressed THEN
+	
+	_ConveyorModule.Disable();
+	
+ELSIF _StartButton.IsPressed AND _StopButton.IsReleased AND _EmergencyStopButton.IsReleased THEN
+	
+	_ConveyorModule.Enable();
+	
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{1b645e83-7ff1-4e11-a3b7-b6afd37c0fd0}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains :	BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode :	BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	StartButton	:	I_PushButton;
+	StopButton	:	I_PushButton;
+	EmergencyStopButton	:	I_PushButton;
+	ConveyorModule	:	I_Module;
+
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// ATTENZIONE ALLO scope delle variabili !!
+// usare THIS^ per dereferenziare le variabili locali 
+// di questa istanza della classe MyConveyorSortingMachine
+THIS^._StartButton := StartButton;
+THIS^._StopButton := StopButton;
+THIS^._EmergencyStopButton := EmergencyStopButton;
+THIS^._ConveyorModule := ConveyorModule;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
