@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="MAIN" Id="{da3e02a2-6934-4fa9-96c3-ed725abacc49}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	ConveyorControl	:	BOOL;
+	Timeout	:	TOF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT GVL.StopButton OR NOT GVL.EmergencyStopButton THEN
+	ConveyorControl := FALSE;
+ELSIF GVL.StartButton AND GVL.StopButton THEN
+	ConveyorControl := TRUE;
+END_IF
+
+Timeout(In := ConveyorControl AND GVL.ProductDetectedSensor, PT := T#5S);
+
+GVL.MotorContactor := ConveyorControl AND Timeout.Q AND NOT GVL.ConveyorFullSensor;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
