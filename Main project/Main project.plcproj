@@ -30,6 +30,9 @@
     <Compile Include="POUs\Devices\DirectOnlineStarterMotor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Devices\I_PushButton.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Devices\NormallyClosedSensor.TcPOU">
       <SubType>Code</SubType>
     </Compile>

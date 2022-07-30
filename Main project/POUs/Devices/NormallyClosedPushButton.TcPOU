@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="NormallyClosedPushButton" Id="{dc763925-e444-42e7-806d-7e2661aae3ae}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK NormallyClosedPushButton
+    <Declaration><![CDATA[FUNCTION_BLOCK NormallyClosedPushButton IMPLEMENTS I_PushButton
 VAR
 	input AT %I*	:	BOOL;
 END_VAR
