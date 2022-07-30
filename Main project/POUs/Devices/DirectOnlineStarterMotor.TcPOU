@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="DirectOnlineStarterMotor" Id="{d1e95a37-c50a-4020-8ecb-f6b8ea091542}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DirectOnlineStarterMotor
+VAR
+	contactor	:	Contactor;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Start" Id="{584e866d-7b71-4da9-8644-e945068d53e4}">
+      <Declaration><![CDATA[METHOD PUBLIC Start
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[contactor.SwitchOn();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{92ae5ef7-1491-4250-9599-f019de641b56}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[contactor.SwitchOff();]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

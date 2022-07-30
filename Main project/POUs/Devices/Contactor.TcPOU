@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="Contactor" Id="{9cdfaaab-0f05-497b-9988-34bbe645723a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Contactor
+VAR
+	output AT %Q*	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="SwitchOff" Id="{0f767173-681c-4ef9-b788-4b0fb4302ed0}">
+      <Declaration><![CDATA[METHOD PUBLIC SwitchOff
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[output := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SwitchOn" Id="{f3b273df-0b8e-47b8-b7d0-3e6b4875561f}">
+      <Declaration><![CDATA[METHOD PUBLIC SwitchOn
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[output := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

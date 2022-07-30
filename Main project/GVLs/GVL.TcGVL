@@ -8,7 +8,7 @@ VAR_GLOBAL
 	EmergencyStopButton	:	NormallyClosedPushButton;
 	ProductDetectedSensor	:	NormallyClosedSensor;
 	ConveyorFullSensor	:	NormallyClosedSensor;
-	MotorContactor	AT %Q*:	BOOL;
+	ConveyorMotor	:	DirectOnlineStarterMotor;
 	
 END_VAR]]></Declaration>
   </GVL>
