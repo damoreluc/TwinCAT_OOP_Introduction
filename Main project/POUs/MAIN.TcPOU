@@ -8,15 +8,15 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT GVL.StopButton OR NOT GVL.EmergencyStopButton THEN
+      <ST><![CDATA[IF GVL.StopButton.IsPressed OR GVL.EmergencyStopButton.IsPressed THEN
 	ConveyorControl := FALSE;
-ELSIF GVL.StartButton AND GVL.StopButton THEN
+ELSIF GVL.StartButton.IsPressed AND GVL.StopButton.IsReleased AND GVL.EmergencyStopButton.IsReleased THEN
 	ConveyorControl := TRUE;
 END_IF
 
-Timeout(In := ConveyorControl AND GVL.ProductDetectedSensor, PT := T#5S);
+Timeout(In := ConveyorControl AND GVL.ProductDetectedSensor.IsActive, PT := T#5S);
 
-GVL.MotorContactor := ConveyorControl AND Timeout.Q AND NOT GVL.ConveyorFullSensor;
+GVL.MotorContactor := ConveyorControl AND Timeout.Q AND NOT GVL.ConveyorFullSensor.IsActive;
 ]]></ST>
     </Implementation>
   </POU>

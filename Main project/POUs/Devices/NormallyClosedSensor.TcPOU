@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="NormallyClosedSensor" Id="{cf35b91c-883d-4722-9eb1-85c6733e2d78}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK NormallyClosedSensor
+VAR
+	input AT %I*	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="IsActive" Id="{bea70df2-ff2b-4195-9ca3-a948b46cb6c4}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsActive : BOOL
+
+// ho eliminato manualmente il Setter di questa proprietà perché qui non ha senso
+]]></Declaration>
+      <Get Name="Get" Id="{e19861bc-5910-46c1-bf54-05096819507a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsActive := NOT input;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

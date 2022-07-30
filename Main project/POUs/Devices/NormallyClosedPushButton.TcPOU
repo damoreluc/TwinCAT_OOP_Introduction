@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="NormallyClosedPushButton" Id="{dc763925-e444-42e7-806d-7e2661aae3ae}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK NormallyClosedPushButton
+VAR
+	input AT %I*	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="IsPressed" Id="{10c582a4-a9eb-496d-9eba-e553c86703ea}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsPressed : BOOL
+
+// ho eliminato manualmente il Setter di questa proprietà perché qui non ha senso
+]]></Declaration>
+      <Get Name="Get" Id="{62e67e1c-fb7e-4ef9-b8da-52a8692b14f7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsPressed := NOT input;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="IsReleased" Id="{9b823a2c-121e-4821-96ff-d7e27f7c7e5a}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsReleased : BOOL
+
+// ho eliminato manualmente il Setter di questa proprietà perché qui non ha senso
+]]></Declaration>
+      <Get Name="Get" Id="{c0c697fd-6b2b-4c66-a436-bd43201ded03}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsReleased := NOT IsPressed;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

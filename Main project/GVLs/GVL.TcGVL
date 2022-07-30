@@ -3,11 +3,11 @@
   <GVL Name="GVL" Id="{788d73b2-c2a2-47f5-ab0a-e80d75f6a820}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	StartButton	AT %I*:	BOOL;
-	StopButton	AT %I*:	BOOL;
-	EmergencyStopButton	AT %I*:	BOOL;
-	ProductDetectedSensor	AT %I*:	BOOL;
-	ConveyorFullSensor	AT %I*:	BOOL;
+	StartButton	:	NormallyOpenPushButton;
+	StopButton	:	NormallyClosedPushButton;
+	EmergencyStopButton	:	NormallyClosedPushButton;
+	ProductDetectedSensor	:	NormallyClosedSensor;
+	ConveyorFullSensor	:	NormallyClosedSensor;
 	MotorContactor	AT %Q*:	BOOL;
 	
 END_VAR]]></Declaration>

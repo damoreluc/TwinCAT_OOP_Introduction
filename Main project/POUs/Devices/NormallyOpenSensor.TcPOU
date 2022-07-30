@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="NormallyOpenSensor" Id="{b620ad30-adc5-4dbe-82d7-016f9c37814d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK NormallyOpenSensor
+VAR
+	input AT %I*	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="IsActive" Id="{7804bb6d-2964-4334-af99-f7c637281512}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsActive : BOOL
+
+// ho eliminato manualmente il Setter di questa proprietà perché qui non ha senso
+]]></Declaration>
+      <Get Name="Get" Id="{c46e44ec-8482-459a-a039-a63f5f84f4cd}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsActive := input;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>
