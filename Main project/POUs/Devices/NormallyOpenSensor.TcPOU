@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="NormallyOpenSensor" Id="{b620ad30-adc5-4dbe-82d7-016f9c37814d}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK NormallyOpenSensor
+    <Declaration><![CDATA[FUNCTION_BLOCK NormallyOpenSensor IMPLEMENTS I_Sensor
 VAR
 	input AT %I*	:	BOOL;
 END_VAR

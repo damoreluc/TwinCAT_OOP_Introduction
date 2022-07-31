@@ -3,11 +3,21 @@
   <POU Name="SortingConveyor" Id="{6edeefe8-d3dc-4764-8536-d2ac7fc3a251}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK SortingConveyor IMPLEMENTS I_Module
 VAR
-	enabled	:	BOOL;
+	_productDetected	:	I_Sensor;
+	_conveyorFull	:	I_Sensor;
+	_conveyorMotor	:	I_SingleDirectionMotor;
+	_enabled	:	BOOL;
+	_timeout: TOF;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[_timeout(In := _enabled AND _productDetected.IsActive, PT := T#5S);
+
+IF _enabled AND _timeout.Q AND NOT _conveyorFull.IsActive THEN
+	_conveyorMotor.Start();
+ELSE
+	_conveyorMotor.Stop();
+END_IF]]></ST>
     </Implementation>
     <Method Name="Disable" Id="{d21d1bad-9e97-409f-b2b3-4ec6e1e821c6}">
       <Declaration><![CDATA[METHOD Disable
@@ -15,7 +25,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[enabled := false;]]></ST>
+        <ST><![CDATA[_enabled := false;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Enable" Id="{f2c18022-b9d6-4908-833c-9365e754e1d7}">
@@ -24,7 +34,26 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[enabled := true;]]></ST>
+        <ST><![CDATA[_enabled := true;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{265d8115-b619-48aa-a86a-c4d70b29ccbe}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	ProductDetected	:	I_Sensor;
+	ConveyorFull	:	I_Sensor;
+	ConveyorMotor	:	I_SingleDirectionMotor;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// ATTENZIONE ALLO scope delle variabili !!
+// usare THIS^ per dereferenziare le variabili locali 
+// di questa istanza della classe SortingConveyor
+THIS^._productDetected := ProductDetected;
+THIS^._conveyorFull := ConveyorFull;
+this^._conveyorMotor := ConveyorMotor;]]></ST>
       </Implementation>
     </Method>
   </POU>

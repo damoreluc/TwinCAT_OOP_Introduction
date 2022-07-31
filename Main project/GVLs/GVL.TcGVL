@@ -10,7 +10,9 @@ VAR_GLOBAL
 	conveyorFullSensor	:	NormallyClosedSensor;
 	conveyorMotor	:	DirectOnlineStarterMotor;
 	
-	sortingConveyor	:	SortingConveyor;
+	sortingConveyor	:	SortingConveyor(ProductDetected := productDetectedSensor,
+		                                ConveyorFull := conveyorFullSensor,
+										ConveyorMotor := conveyorMotor);
 	
 	myConveyorSortingMachine	:	MyConveyorSortingMachine( StartButton := startButton,
                                                               StopButton := stopButton,
