@@ -10,6 +10,7 @@
 *.tmc
 *.tmcRefac
 *.project.~u
+*.~u
 *.tclrs
 *.tclrq
 *.tnzip
