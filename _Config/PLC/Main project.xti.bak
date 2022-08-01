@@ -7,10 +7,6 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>GVL.backupConveyorFullSensor.input</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL.startButton.input</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -28,6 +24,10 @@
 				</Var>
 				<Var>
 					<Name>GVL.conveyorFullSensor.input</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.backupConveyorFullSensor.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
