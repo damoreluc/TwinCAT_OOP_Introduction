@@ -11,5 +11,8 @@
 		<Plc>
 			<Project File="Main project.xti"/>
 		</Plc>
+		<SymbolWatch>
+			<Variable>TIPC^Main project^Main project Instance^PlcTask Outputs^GVL.conveyorMotor.contactor.output</Variable>
+		</SymbolWatch>
 	</Project>
 </TcSmProject>

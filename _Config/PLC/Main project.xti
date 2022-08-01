@@ -26,6 +26,10 @@
 					<Name>GVL.conveyorFullSensor.input</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL.backupConveyorFullSensor.input</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>

@@ -8,6 +8,7 @@ VAR_GLOBAL
 	emergencyStopButton	:	NormallyClosedPushButton;
 	productDetectedSensor	:	NormallyClosedSensor;
 	conveyorFullSensor	:	NormallyClosedSensor;
+	backupConveyorFullSensor	:	NormallyClosedSensor;
 	conveyorMotor	:	DirectOnlineStarterMotor;
 	
 	sortingConveyor	:	SortingConveyor(ProductDetected := productDetectedSensor,

@@ -19,6 +19,16 @@ ELSE
 	_conveyorMotor.Stop();
 END_IF]]></ST>
     </Implementation>
+    <Method Name="ChangeConveyorFullSensor" Id="{465fdeb0-dac8-4af4-bc46-f1a19c89eebf}">
+      <Declaration><![CDATA[METHOD PUBLIC ChangeConveyorFullSensor
+VAR_INPUT
+	newSensor	:	I_Sensor;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^._conveyorFull := newSensor;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Disable" Id="{d21d1bad-9e97-409f-b2b3-4ec6e1e821c6}">
       <Declaration><![CDATA[METHOD Disable
 VAR_INPUT
