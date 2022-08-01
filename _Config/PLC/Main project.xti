@@ -1,19 +1,11 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.29" ClassName="CNestedPlcProjDef">
 	<Project GUID="{E6C172BD-50BC-4A11-A936-AB8FB59C710B}" Name="Main project" PrjFilePath="..\..\Main project\Main project.plcproj" TmcFilePath="..\..\Main project\Main project.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Main project\Main project.tmc">
 			<Name>Main project Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
-				<Var>
-					<Name>GVL.productDetectedSensor.input</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.conveyorFullSensor.input</Name>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>GVL.startButton.input</Name>
 					<Type>BOOL</Type>
@@ -24,6 +16,14 @@
 				</Var>
 				<Var>
 					<Name>GVL.emergencyStopButton.input</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.productDetectedSensor.input</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.conveyorFullSensor.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>

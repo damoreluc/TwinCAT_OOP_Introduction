@@ -7,30 +7,30 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>GVL.ProductDetectedSensor.input</Name>
+					<Name>GVL.productDetectedSensor.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL.ConveyorFullSensor.input</Name>
+					<Name>GVL.conveyorFullSensor.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL.StartButton.input</Name>
+					<Name>GVL.startButton.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL.StopButton.input</Name>
+					<Name>GVL.stopButton.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL.EmergencyStopButton.input</Name>
+					<Name>GVL.emergencyStopButton.input</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>GVL.ConveyorMotor.contactor.output</Name>
+					<Name>GVL.conveyorMotor.contactor.output</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
