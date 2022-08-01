@@ -3,12 +3,17 @@
   <POU Name="MAIN" Id="{da3e02a2-6934-4fa9-96c3-ed725abacc49}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	sensorFailed: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[GVL.sortingConveyor();
 
 GVL.myConveyorSortingMachine();
+IF sensorFailed THEN
+	sensorFailed := FALSE;
+	GVL.sortingConveyor.ChangeConveyorFullSensor(GVL.backupConveyorFullSensor);
+END_IF
 
 ]]></ST>
     </Implementation>
